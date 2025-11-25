@@ -9,7 +9,13 @@ module.exports = {
     userInterfaceStyle: "automatic",
     newArchEnabled: true,
     extra: {
-      apiUrl: process.env.API_URL || "http://10.0.2.2:8080/api/v1",
+      // API URL Configuration:
+      // - Set API_URL environment variable to override default
+      // - Android Emulator: Use 10.0.2.2 instead of localhost
+      // - iOS Simulator: Use localhost or your machine's IP
+      // - Physical Device: Use your machine's IP address on same network
+      // Example: export API_URL=http://192.168.1.100:42069/api/v1
+      apiUrl: process.env.API_URL || "http://10.0.2.2:42069/api/v1",
     },
     ios: {
       supportsTablet: true,
